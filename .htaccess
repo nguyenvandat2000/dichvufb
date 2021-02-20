@@ -1,0 +1,74 @@
+RewriteEngine on
+
+#==========================================
+#Vô hiệu hóa
+RewriteRule ^disable.html$ core/notications/disable.php
+ErrorDocument 404 /core/notications/404.html
+ErrorDocument 403 /core/notications/403.html
+ErrorDocument 500 /core/notications/500.html
+#TRANG CHỦ HOME
+RewriteRule trang-chu.html index.php
+RewriteRule ^Home$ index.php
+#ĐĂNG NHẬP HỆ THÔNG
+RewriteRule ^Login$ log/dangnhap.php
+#ĐĂNG KÝ HỆ THỐNG
+RewriteRule ^Sinup$ log/dangky.php
+#ĐĂNG XUẤT HỆ THỐNG
+RewriteRule ^Logout$ index.php?Login=Logout
+#======================ADMIN================================
+#THÊM TOKEN
+RewriteRule ^Addtoken$ core/kunloc/add/them-token.php
+#THÊM TIỀN
+RewriteRule ^CongTien$ core/kunloc/add/them-tien.php
+#Danh Sách Thành Viên
+RewriteRule ^Members$ index.php?Admin=Members
+#=====================INFO CHANGE========================
+#THAY ĐỔI MẬT KHẨU
+RewriteRule ^Password$ index.php?Home=Doi_Pass
+#THẢY ĐỔI THÔNG TIN
+RewriteRule ^ThongTin$ index.php?Home=Info
+#BÁO CÁO TÀI KHOẢN
+RewriteRule ^Report$ index.php?Home=Report
+#Danh Sách Đen
+RewriteRule ^Danh-Sach-Den$ index.php?Home=Danh-Sach-Den
+#=========================TƯƠNG TÁC=============================
+#Thêm Tài Khoản chéo
+RewriteRule ^Themacc$ index.php?Tuongtac=Themacc
+#Mua like chéo
+RewriteRule ^Mualike$ index.php?Tuongtac=Mualike
+#Mua cảm xúc chéo
+RewriteRule ^Muacamxuc$ index.php?Tuongtac=Muacamxuc
+#Mua sub chéo
+RewriteRule ^Muasub$ index.php?Tuongtac=Muasub
+#Mua share chéo
+RewriteRule ^Muashare$ index.php?Tuongtac=Muashare
+#Mua CMT chéo
+RewriteRule ^Muacmt$ index.php?Tuongtac=Muacmt
+#LIKE TƯƠNG TÁC
+RewriteRule ^Kiemtien_like$ index.php?Tuongtac=Kiemtien_like
+#REACTION TƯƠNG TÁC
+RewriteRule ^Kiemtien_camxuc$ index.php?Tuongtac=Kiemtien_camxuc
+#SUB TƯƠNG TÁC
+RewriteRule ^Kiemtien_sub$ index.php?Tuongtac=Kiemtien_sub
+#SHARE TƯƠNG TÁC
+RewriteRule ^Kiemtien_share$ index.php?Tuongtac=Kiemtien_share
+#CMT TƯƠNG TÁC
+RewriteRule ^Kiemtien_cmt$ index.php?Tuongtac=Kiemtien_cmt
+#================= Tuong tac 2 ===============================
+#KIẾM XU LIKE
+RewriteRule ^Xu_like$ index.php?Tuongtac2=Xu_like
+#KIẾM XU REACTION
+RewriteRule ^Xu_camxuc$ index.php?Tuongtac2=Xu_camxuc
+#KIẾM XU SUB
+RewriteRule ^Xu_sub$ index.php?Tuongtac2=Xu_sub
+#KIẾM XU COMMENT
+RewriteRule ^Xu_cmt$ index.php?Tuongtac2=Xu_cmt
+#KIẾM XU SHARE
+RewriteRule ^Xu_share$ index.php?Tuongtac2=Xu_share
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “alt-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-alt-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
